@@ -23,7 +23,7 @@ import org.springframework.web.client.RestTemplate;
  * @author ivanr
  */
 @Service
-public class RestService {
+public class LoginService {
  
     @Autowired
     RestTemplate restTemplate;

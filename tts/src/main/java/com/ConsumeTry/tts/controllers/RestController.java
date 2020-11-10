@@ -6,7 +6,7 @@
 package com.ConsumeTry.tts.controllers;
 
 import com.ConsumeTry.tts.entities.rest.LoginInput;
-import com.ConsumeTry.tts.services.RestService;
+import com.ConsumeTry.tts.services.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class RestController {
     @Autowired
-    RestService service;
+    LoginService service;
     
     @GetMapping("")
     public String index(Model model){
