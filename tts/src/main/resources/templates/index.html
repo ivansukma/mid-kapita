@@ -28,11 +28,11 @@ and open the template in the editor.
         <table border="1">
             <thead>
                 <tr>
-                    <th>Department Id</th>
-                    <th>Department Name</th>
-                    <th>Last Name</th>
-                    <th>Alamat</th>
-                    <th>Jumlah</th>
+                    <th>Id</th>
+                    <th>Birthdate</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Name</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,12 +45,12 @@ and open the template in the editor.
                 
                 </tr>-->
                 
-                <tr th:each="as : ${login}">
+                <tr th:each="as : ${profile}">
                     <td th:text="${as.id}"></td>
-                    <td th:text="${as.name}"></td>
+                    <td th:text="${as.birthDate}"></td>
                     <td th:text="${as.email}"></td>
-                    <td th:text="${as.roles}"></td>
-                    <td th:text="${as.status}"></td>
+                    <td th:text="${as.gender}"></td>
+                    <td th:text="${as.name}"></td>
 <!--                    <td>
                         <a th:href="@{delete/} + ${as.regionId}" method="POST">Delete</a>
                     </td>-->

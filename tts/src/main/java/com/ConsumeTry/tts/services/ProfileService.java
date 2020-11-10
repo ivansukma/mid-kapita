@@ -25,12 +25,12 @@ public class ProfileService {
     @Value("${api.uri}")
     private String uri;
     
-    public ProfileBasic getProfibasic(String id){
+    public ProfileBasic getProfilebasic(String id){
         
-        Person result;
+        ProfileBasic output;
         Map<String, String> param = new HashMap<>();
         param.put("id", id);
-        result = restTemplate.getForObject(uri+"/{id}", Person.class, param);
-        return result;
+        output = restTemplate.getForObject(uri+"profile/basic/{id}", ProfileBasic.class, param);
+        return output;
     }
 }

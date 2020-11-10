@@ -13,22 +13,11 @@ import lombok.Data;
  */
 @Data
 public class ProfileBasic {
-
-    private String city;
     private String id;
-    private String province;
-    private String street1;
-    private String street2;
-    private String zipCode;
     private String birthDate;
     private String email;
     private String gender;
     private String name;
-    private String facebook;
-    private String instagram;
-    private String likedin;
-    private String phone;
-
 }
 
 

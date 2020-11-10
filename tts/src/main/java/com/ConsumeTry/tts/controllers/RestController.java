@@ -7,6 +7,7 @@ package com.ConsumeTry.tts.controllers;
 
 import com.ConsumeTry.tts.entities.rest.LoginInput;
 import com.ConsumeTry.tts.services.LoginService;
+import com.ConsumeTry.tts.entities.rest.ProfileBasic;
 import com.ConsumeTry.tts.services.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class RestController {
+    //PROFILE LOGIN TRY
     @Autowired
     LoginService service;
     
@@ -36,10 +38,14 @@ public class RestController {
         System.out.println(service.login(input));
         return "index";
     }
-    @GetMapping("/profile/")
+    //PROFILE GET
+    @Autowired
+    ProfileService ProfileService;
+    
+    @GetMapping("profile")
     public String ProfileBasic(Model model) {
-        model.addAttribute("profile", ProfileService().getProfilBasic("USER-00016"));
-        System.out.println(ProfileService.getProfileBasic("USER-00016"));
-        return "index";
+        //model.addAttribute("profile", ProfileService.getProfilebasic("USER-00016"));
+        System.out.println(ProfileService.getProfilebasic("USER-00016"));
+        return "profile_basic";
     }
 }
