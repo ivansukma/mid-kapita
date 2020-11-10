@@ -7,6 +7,7 @@ package com.ConsumeTry.tts.controllers;
 
 import com.ConsumeTry.tts.entities.rest.LoginInput;
 import com.ConsumeTry.tts.services.LoginService;
+import com.ConsumeTry.tts.services.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +34,12 @@ public class RestController {
     public String login(LoginInput input){
         System.out.println(input);
         System.out.println(service.login(input));
+        return "index";
+    }
+    @GetMapping("/profile/")
+    public String ProfileBasic(Model model) {
+        model.addAttribute("profile", ProfileService().getProfilBasic("USER-00016"));
+        System.out.println(ProfileService.getProfileBasic("USER-00016"));
         return "index";
     }
 }
