@@ -38,14 +38,15 @@ public class RestController {
         System.out.println(service.login(input));
         return "index";
     }
+    
     //PROFILE GET
     @Autowired
     ProfileService ProfileService;
     
-    @GetMapping("profile")
-    public String ProfileBasic(Model model) {
-        //model.addAttribute("profile", ProfileService.getProfilebasic("USER-00016"));
-        System.out.println(ProfileService.getProfilebasic("USER-00016"));
+   @GetMapping("/profil/")
+    public String profilBasic(Model model) {
+        model.addAttribute("profil", ProfileService.getProfilBasic("USER-00014"));
+        System.out.println(ProfileService.getProfilBasic("USER-00014"));
         return "profile_basic";
     }
 }
