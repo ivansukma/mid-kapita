@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Basic CRUD</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!--<div>CRUD Region</div>-->
+        <div>CRUD Department</div>
+        
+        <!--<form th:object="${region}" th:action="@{save}" method="POST">-->
+            <!--<form th:object="${department}" th:action="@{save}" method="POST">-->
+            <!--Region Id       : <input type="text" th:field="*{regionId}" />-->
+            <!--Region Id       : <input type="text" th:field="*{deparmentId}" />-->
+            <!--<br/>-->
+            <!--Region Name     : <input type="text" th:field="*{regionName}" />-->
+            <!--Region Name     : <input type="text" th:field="*{departmentName}" />-->
+            <!--<br/>-->
+            <!--<input type="submit" value="Save" name="Save" />-->
+        <!--</form>-->
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Department Id</th>
+                    <th>Department Name</th>
+                    <th>Last Name</th>
+                    <th>Alamat</th>
+                    <th>Jumlah</th>
+                </tr>
+            </thead>
+            <tbody>
+<!--                <tr th:each="as : ${regions}">
+                    <td th:text="${as.regionId}"></td>
+                    <td th:text="${as.regionName}"></td>
+                    <td>
+                        <a th:href="@{delete/} + ${as.regionId}" method="POST">Delete</a>
+                    </td>
+                
+                </tr>-->
+                
+                <tr th:each="as : ${login}">
+                    <td th:text="${as.id}"></td>
+                    <td th:text="${as.name}"></td>
+                    <td th:text="${as.email}"></td>
+                    <td th:text="${as.roles}"></td>
+                    <td th:text="${as.status}"></td>
+<!--                    <td>
+                        <a th:href="@{delete/} + ${as.regionId}" method="POST">Delete</a>
+                    </td>-->
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
+
+
