@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>REGISTER</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form th:action="@{/register}" th:object="${register}" method="POST">
+            BirthDate <input type="text" id="txtId" th:field="*{birthDate}"><br><br>
+            Current Company <input type="text" id="txtPass" th:field="*{currentCompany}"><br><br>
+            Degree <input type="text" id="txtId" th:field="*{degree}"><br><br>
+            Email <input type="text" id="txtPass" th:field="*{email}"><br><br>
+            Gender <input type="text" id="txtId" th:field="*{gender}"><br><br>
+            Job <input type="text" id="txtPass" th:field="*{job}"><br><br>
+            Major <input type="text" id="txtId" th:field="*{major}"><br><br>
+            Name <input type="text" id="txtPass" th:field="*{name}"><br><br>
+            Password <input type="text" id="txtId" th:field="*{password}"><br><br>
+            Phone <input type="text" id="txtPass" th:field="*{phone}"><br><br>
+            Status <input type="text" id="txtId" th:field="*{status}"><br><br>
+            University <input type="text" id="txtPass" th:field="*{university}"><br><br>
+            Username <input type="text" id="txtId" th:field="*{username}"><br><br>
+            <input type="submit" value="register">
+        </form>
+    </body>
+</html>

@@ -18,6 +18,9 @@ import tts.ivan.tts.entities.rest.ProfileAddress;
 import tts.ivan.tts.entities.rest.ProfileContact;
 import tts.ivan.tts.entities.rest.ProfileOccupation;
 import tts.ivan.tts.entities.rest.ProfileEducation;
+import tts.ivan.tts.services.RegisterService;
+import tts.ivan.tts.entities.rest.Register;
+
 /**
  *
  * @author ivanr
@@ -78,34 +81,51 @@ public class RestController {
         System.out.println(profileService.getProfileEducation("USER-00016"));
         return "profile_education";
     }
- //=================Per Save An duniawi==================
-     @PostMapping("/saveinfo")
-    public String save(ProfileInfo input){
+    //=================Per Save An duniawi==================
+
+    @PostMapping("/saveinfo")
+    public String save(ProfileInfo input) {
         profileService.updateProfileBasic(input);
         return "redirect:/profile/";
     }
-    
-     @PostMapping("/saveaddress")
-    public String save(ProfileAddress input){
+
+    @PostMapping("/saveaddress")
+    public String save(ProfileAddress input) {
         profileService.updateProfileAddress(input);
         return "redirect:/address/";
     }
-    
-     @PostMapping("/savecontact")
-    public String save(ProfileContact input){
+
+    @PostMapping("/savecontact")
+    public String save(ProfileContact input) {
         profileService.updateProfileContact(input);
         return "redirect:/contact/";
     }
-    
+
     @PostMapping("/saveoccupation")
-    public String save(ProfileOccupation input){
+    public String save(ProfileOccupation input) {
         profileService.updateProfileOccupation(input);
         return "redirect:/occupation/";
     }
-    
+
     @PostMapping("/saveeducation")
-    public String save(ProfileEducation input){
+    public String save(ProfileEducation input) {
         profileService.updateProfileEducation(input);
         return "redirect:/education/";
+    }
+//======================================Register===========================================
+    @Autowired
+    RegisterService RegisterService;
+
+    @GetMapping("/register")
+    public String registerindex(Model model) {
+        model.addAttribute("register", new Register());
+        return "register";
+    }
+
+    @PostMapping("/register")
+    public String register(Register input) {
+        System.out.println(input);
+        System.out.println(RegisterService.register(input));
+        return "redirect:/profile/";
     }
 }
