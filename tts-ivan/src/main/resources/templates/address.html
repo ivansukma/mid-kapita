@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Data Diri</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Address Table</div>
+        <table border="1">
+            <tr th:each="as : ${address}">
+                <td>Kota</td>
+                <td th:text="${as.city}"></td>
+            </tr>
+            <tr th:each="as : ${address}">
+                <td>id</td>
+                <td th:text="${as.id}"></td>
+            </tr>
+            <tr th:each="as : ${address}">
+                <td>Provinsi</td>
+                <td th:text="${as.province}"></td>
+            </tr>
+            <tr th:each="as : ${address}">
+                <td>Alamat 1</td>
+                <td th:text="${as.street1}"></td>
+            </tr>
+            <tr th:each="as : ${address}">
+                <td>Alamat 2</td>
+                <td th:text="${as.street2}"></td>
+            </tr>
+            <tr th:each="as : ${address}">
+                <td>Kode Wilayah</td>
+                <td th:text="${as.zipCode}"></td>
+            </tr>
+        </table>
+
+    </body>
+</html>

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import tts.ivan.tts.entities.rest.ProfileInfo;
+import tts.ivan.tts.entities.rest.ProfileAddress;
 
 /**
  *
@@ -25,15 +26,24 @@ public class ProfileService {
 
     @Value("${api.uri}")
     private String uri;
-    
-    
-    public ProfileInfo getProfileInfo(String id){
+
+    public ProfileInfo getProfileInfo(String id) {
         ProfileInfo result;
         Map<String, String> param = new HashMap<>();
-        
+
         param.put("id", id);
-        
+
         result = restTemplate.getForObject(uri + "profile/basic/{id}", ProfileInfo.class, param);
+        return result;
+    }
+
+    public ProfileAddress getProfileAddress(String id) {
+        ProfileAddress result;
+        Map<String, String> param = new HashMap<>();
+
+        param.put("id", id);
+
+        result = restTemplate.getForObject(uri + "profile/address/{id}", ProfileAddress.class, param);
         return result;
     }
 }

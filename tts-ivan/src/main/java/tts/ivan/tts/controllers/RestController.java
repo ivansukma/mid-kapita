@@ -23,28 +23,34 @@ public class RestController {
 
     @Autowired
     LoginRestService service;
-    
 
     @GetMapping("")
     public String index(Model model) {
         model.addAttribute("logininput", new LoginInput());
         return "login";
     }
-    
+
     @PostMapping("login")
-    public String login(LoginInput input){
+    public String login(LoginInput input) {
         System.out.println(input);
         System.out.println(service.login(input));
-        return "index";
+        return "redirect:/profile/";
     }
-    
+
     @Autowired
     ProfileService profileService;
-    
+
     @GetMapping("/profile/")
-    public String profileBasic(Model model){
+    public String profileBasic(Model model) {
         model.addAttribute("profile", profileService.getProfileInfo("USER-00016"));
         System.out.println(profileService.getProfileInfo("USER-00016"));
         return "profile";
+    }
+
+    @GetMapping("/address/")
+    public String profileAddress(Model model) {
+        model.addAttribute("address", profileService.getProfileAddress("USER-00016"));
+        System.out.println(profileService.getProfileAddress("USER-00016"));
+        return "address";
     }
 }
