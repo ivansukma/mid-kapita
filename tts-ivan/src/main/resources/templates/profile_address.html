@@ -10,7 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body><center>
         <div>Address Table</div>
         <table border="1">
             <tr th:each="as : ${address}">
@@ -38,6 +38,22 @@ and open the template in the editor.
                 <td th:text="${as.zipCode}"></td>
             </tr>
         </table>
-
+        <form th:action="@{/saveaddress}" th:object="${address}" method="POST">
+            <label>ID</label>
+            <input type="text" id="textId" class="form-control" th:field="*{id}"><br><br>
+            <label>Kota</label>
+            <input type="text" id="textId" class="form-control" th:field="*{city}">
+            <label>Provinsi</label>
+            <input type="text" id="textId" class="form-control" th:field="*{province}">
+            <label>Alamat 1</label>
+            <input type="text" id="textId" class="form-control" th:field="*{street1}">
+            <label>Alamat 2</label>
+            <input type="text" id="textId" class="form-control" th:field="*{street2}">
+            <label>Kode Wilayah</label>
+            <input type="text" id="textId" class="form-control" th:field="*{zipCode}">
+            <input type="submit" value="Save">
+            <br><br></h1>
+        </form>
+    </center>
     </body>
 </html>

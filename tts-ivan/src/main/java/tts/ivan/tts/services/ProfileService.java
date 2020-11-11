@@ -78,4 +78,38 @@ public class ProfileService {
         result = restTemplate.getForObject(uri + "profile/education/{id}", ProfileEducation.class, param);
         return result;
     }
+ //=============================PER SAVE AN DUNIAWI========================================
+
+  public boolean updateProfileBasic(ProfileInfo input) {
+        boolean result = true;
+        try {
+            restTemplate.postForObject(uri + "profile/basic/", input, ProfileInfo.class);
+        } catch (Exception e) {
+            result = false;
+        }
+
+        return result;
+    }
+  
+    public boolean updateProfileContact(ProfileContact input) {
+        boolean result = true;
+        try {
+            restTemplate.postForObject(uri + "profile/contact/", input, ProfileContact.class);
+        } catch (Exception e) {
+            result = false;
+        }
+
+        return result;
+    }
+    
+    public boolean updateProfileAddress(ProfileAddress input) {
+        boolean result = true;
+        try {
+            restTemplate.postForObject(uri + "profile/address/", input, ProfileAddress.class);
+        } catch (Exception e) {
+            result = false;
+        }
+
+        return result;
+    }
 }

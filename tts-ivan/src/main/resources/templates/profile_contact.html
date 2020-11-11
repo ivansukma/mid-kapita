@@ -34,6 +34,20 @@ and open the template in the editor.
                 <td th:text="${as.phone}"></td>
             </tr>
         </table>
-
+        <div><h1>Update Data</div>
+        <form th:action="@{/savecontact}" th:object="${contact}" method="POST">
+            <label>ID</label>
+            <input type="text" id="textId" class="form-control" th:field="*{id}"><br><br>
+            <label>Facebook</label>
+            <input type="text" id="textId" class="form-control" th:field="*{facebook}">
+            <label>Instagram</label>
+            <input type="text" id="textId" class="form-control" th:field="*{instagram}">
+            <label>LinkedIn</label>
+            <input type="text" id="textId" class="form-control" th:field="*{linkedin}">
+            <label>Phone</label>
+            <input type="text" id="textId" class="form-control" th:field="*{phone}">
+            <input type="submit" value="Save">
+            <br><br></h1>
+        </form>
     </body>
 </html>

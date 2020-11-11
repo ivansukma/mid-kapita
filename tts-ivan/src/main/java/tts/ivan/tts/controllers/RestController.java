@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import tts.ivan.tts.services.LoginRestService;
 import tts.ivan.tts.entities.rest.LoginInput;
 import tts.ivan.tts.services.ProfileService;
+import tts.ivan.tts.entities.rest.ProfileInfo;
+import tts.ivan.tts.entities.rest.ProfileAddress;
+import tts.ivan.tts.entities.rest.ProfileContact;
 
 /**
  *
@@ -73,5 +76,23 @@ public class RestController {
         model.addAttribute("education", profileService.getProfileEducation("USER-00016"));
         System.out.println(profileService.getProfileEducation("USER-00016"));
         return "profile_education";
+    }
+ //=================Per Save An duniawi==================
+     @PostMapping("/saveinfo")
+    public String save(ProfileInfo input){
+        profileService.updateProfileBasic(input);
+        return "redirect:/profile/";
+    }
+    
+     @PostMapping("/saveaddress")
+    public String save(ProfileAddress input){
+        profileService.updateProfileAddress(input);
+        return "redirect:/address/";
+    }
+    
+     @PostMapping("/savecontact")
+    public String save(ProfileContact input){
+        profileService.updateProfileContact(input);
+        return "redirect:/contact/";
     }
 }

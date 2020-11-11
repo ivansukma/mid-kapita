@@ -10,7 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body><center>
         <div>Profile Table</div>
         <table border="1">
             <tr th:each="as : ${profile}">
@@ -34,6 +34,21 @@ and open the template in the editor.
                 <td th:text="${as.email}"></td>
             </tr>
         </table>
-
+       <div><h1>Update Data</div>
+        <form th:action="@{/saveinfo}" th:object="${profile}" method="POST">
+            <label>ID</label>
+            <input type="text" id="textId" class="form-control" th:field="*{id}"><br><br>
+            <label>BirthDate</label>
+            <input type="text" id="textId" class="form-control" th:field="*{birthDate}">
+            <label>Email</label>
+            <input type="text" id="textId" class="form-control" th:field="*{email}">
+            <label>Gender</label>
+            <input type="text" id="textId" class="form-control" th:field="*{gender}">
+            <label>Name</label>
+            <input type="text" id="textId" class="form-control" th:field="*{name}">
+            <input type="submit" value="Save">
+            <br><br></h1>
+        </form>
+    </center>
     </body>
 </html>
