@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Data Diri</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Education Table</div>
+        <table border="1">
+            <tr th:each="as : ${education}">
+                <td>ID</td>
+                <td th:text="${as.id}"></td>
+            </tr>
+            <tr th:each="as : ${education}">
+                <td>Major</td>
+                <td th:text="${as.major}"></td>
+            </tr>
+            <tr th:each="as : ${education}">
+                <td>University</td>
+                <td th:text="${as.university}"></td>
+            </tr>
+            <tr th:each="as : ${education}">
+                <td>Degree</td>
+                <td th:text="${as.degree}"></td>
+            </tr>
+            <tr th:each="as : ${education}">
+                <td>Status</td>
+                <td th:text="${as.status}"></td>
+            </tr>
+        </table>
+
+    </body>
+</html>

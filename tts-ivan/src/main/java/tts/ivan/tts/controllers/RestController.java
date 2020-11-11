@@ -60,4 +60,18 @@ public class RestController {
         System.out.println(profileService.getProfileContact("USER-00016"));
         return "profile_contact";
     }
+
+    @GetMapping("/occupation/")
+    public String profileOccupation(Model model) {
+        model.addAttribute("occupation", profileService.getProfileOccupation("USER-00016"));
+        System.out.println(profileService.getProfileOccupation("USER-00016"));
+        return "profile_occupation";
+    }
+
+    @GetMapping("/education/")
+    public String profileEducation(Model model) {
+        model.addAttribute("education", profileService.getProfileEducation("USER-00016"));
+        System.out.println(profileService.getProfileEducation("USER-00016"));
+        return "profile_education";
+    }
 }

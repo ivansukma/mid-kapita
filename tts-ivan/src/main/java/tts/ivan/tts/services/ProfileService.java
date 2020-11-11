@@ -14,7 +14,8 @@ import org.springframework.web.client.RestTemplate;
 import tts.ivan.tts.entities.rest.ProfileInfo;
 import tts.ivan.tts.entities.rest.ProfileAddress;
 import tts.ivan.tts.entities.rest.ProfileContact;
-
+import tts.ivan.tts.entities.rest.ProfileEducation;
+import tts.ivan.tts.entities.rest.ProfileOccupation;
 /**
  *
  * @author ivanr
@@ -55,6 +56,26 @@ public class ProfileService {
         param.put("id", id);
 
         result = restTemplate.getForObject(uri + "profile/contact/{id}", ProfileContact.class, param);
+        return result;
+    }
+    
+     public ProfileOccupation getProfileOccupation(String id) {
+        ProfileOccupation result;
+        Map<String, String> param = new HashMap<>();
+
+        param.put("id", id);
+
+        result = restTemplate.getForObject(uri + "profile/currentoccupation/{id}", ProfileOccupation.class, param);
+        return result;
+    }
+     
+      public ProfileEducation getProfileEducation(String id) {
+        ProfileEducation result;
+        Map<String, String> param = new HashMap<>();
+
+        param.put("id", id);
+
+        result = restTemplate.getForObject(uri + "profile/education/{id}", ProfileEducation.class, param);
         return result;
     }
 }
