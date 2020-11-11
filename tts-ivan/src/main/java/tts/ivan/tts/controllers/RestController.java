@@ -44,20 +44,20 @@ public class RestController {
     public String profileBasic(Model model) {
         model.addAttribute("profile", profileService.getProfileInfo("USER-00016"));
         System.out.println(profileService.getProfileInfo("USER-00016"));
-        return "profile";
+        return "profile_basic";
     }
 
     @GetMapping("/address/")
     public String profileAddress(Model model) {
         model.addAttribute("address", profileService.getProfileAddress("USER-00016"));
         System.out.println(profileService.getProfileAddress("USER-00016"));
-        return "address";
+        return "profile_address";
     }
 
     @GetMapping("/contact/")
     public String profilecontact(Model model) {
         model.addAttribute("contact", profileService.getProfileContact("USER-00016"));
         System.out.println(profileService.getProfileContact("USER-00016"));
-        return "contact";
+        return "profile_contact";
     }
 }
