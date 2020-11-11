@@ -30,6 +30,18 @@ and open the template in the editor.
                 <td th:text="${as.website}"></td>
             </tr>
         </table>
-
+<div><h1>Update Data</div>
+        <form th:action="@{/saveoccupation}" th:object="${occupation}" method="POST">
+            <label>ID</label>
+            <input type="text" id="textId" class="form-control" th:field="*{id}"><br><br>
+            <label>Current Company</label>
+            <input type="text" id="textId" class="form-control" th:field="*{currentCompany}">
+            <label>Job</label>
+            <input type="text" id="textId" class="form-control" th:field="*{job}">
+            <label>Website</label>
+            <input type="text" id="textId" class="form-control" th:field="*{website}">
+            <input type="submit" value="Save">
+            <br><br></h1>
+        </form>
     </body>
 </html>

@@ -16,6 +16,7 @@ import tts.ivan.tts.entities.rest.ProfileAddress;
 import tts.ivan.tts.entities.rest.ProfileContact;
 import tts.ivan.tts.entities.rest.ProfileEducation;
 import tts.ivan.tts.entities.rest.ProfileOccupation;
+
 /**
  *
  * @author ivanr
@@ -48,7 +49,7 @@ public class ProfileService {
         result = restTemplate.getForObject(uri + "profile/address/{id}", ProfileAddress.class, param);
         return result;
     }
-    
+
     public ProfileContact getProfileContact(String id) {
         ProfileContact result;
         Map<String, String> param = new HashMap<>();
@@ -58,8 +59,8 @@ public class ProfileService {
         result = restTemplate.getForObject(uri + "profile/contact/{id}", ProfileContact.class, param);
         return result;
     }
-    
-     public ProfileOccupation getProfileOccupation(String id) {
+
+    public ProfileOccupation getProfileOccupation(String id) {
         ProfileOccupation result;
         Map<String, String> param = new HashMap<>();
 
@@ -68,8 +69,8 @@ public class ProfileService {
         result = restTemplate.getForObject(uri + "profile/currentoccupation/{id}", ProfileOccupation.class, param);
         return result;
     }
-     
-      public ProfileEducation getProfileEducation(String id) {
+
+    public ProfileEducation getProfileEducation(String id) {
         ProfileEducation result;
         Map<String, String> param = new HashMap<>();
 
@@ -78,9 +79,9 @@ public class ProfileService {
         result = restTemplate.getForObject(uri + "profile/education/{id}", ProfileEducation.class, param);
         return result;
     }
- //=============================PER SAVE AN DUNIAWI========================================
+    //=============================PER SAVE AN DUNIAWI========================================
 
-  public boolean updateProfileBasic(ProfileInfo input) {
+    public boolean updateProfileBasic(ProfileInfo input) {
         boolean result = true;
         try {
             restTemplate.postForObject(uri + "profile/basic/", input, ProfileInfo.class);
@@ -90,7 +91,18 @@ public class ProfileService {
 
         return result;
     }
-  
+
+    public boolean updateProfileAddress(ProfileAddress input) {
+        boolean result = true;
+        try {
+            restTemplate.postForObject(uri + "profile/address/", input, ProfileAddress.class);
+        } catch (Exception e) {
+            result = false;
+        }
+
+        return result;
+    }
+
     public boolean updateProfileContact(ProfileContact input) {
         boolean result = true;
         try {
@@ -102,14 +114,26 @@ public class ProfileService {
         return result;
     }
     
-    public boolean updateProfileAddress(ProfileAddress input) {
+    public boolean updateProfileOccupation(ProfileOccupation input) {
         boolean result = true;
         try {
-            restTemplate.postForObject(uri + "profile/address/", input, ProfileAddress.class);
+            restTemplate.postForObject(uri + "profile/currentoccupation/", input, ProfileOccupation.class);
         } catch (Exception e) {
             result = false;
         }
 
         return result;
     }
+    
+    public boolean updateProfileEducation(ProfileEducation input) {
+        boolean result = true;
+        try {
+            restTemplate.postForObject(uri + "profile/education/", input, ProfileEducation.class);
+        } catch (Exception e) {
+            result = false;
+        }
+
+        return result;
+    }
+
 }

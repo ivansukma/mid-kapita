@@ -34,6 +34,20 @@ and open the template in the editor.
                 <td th:text="${as.status}"></td>
             </tr>
         </table>
-
+<div><h1>Update Data</div>
+        <form th:action="@{/saveeducation}" th:object="${education}" method="POST">
+            <label>ID</label>
+            <input type="text" id="textId" class="form-control" th:field="*{id}"><br><br>
+            <label>Major</label>
+            <input type="text" id="textId" class="form-control" th:field="*{major}">
+            <label>University</label>
+            <input type="text" id="textId" class="form-control" th:field="*{university}">
+            <label>Degree</label>
+            <input type="text" id="textId" class="form-control" th:field="*{degree}">
+            <label>Status</label>
+            <input type="text" id="textId" class="form-control" th:field="*{status}">
+            <input type="submit" value="Save">
+            <br><br></h1>
+        </form>
     </body>
 </html>

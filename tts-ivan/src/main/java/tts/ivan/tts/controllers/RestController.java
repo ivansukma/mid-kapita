@@ -16,7 +16,8 @@ import tts.ivan.tts.services.ProfileService;
 import tts.ivan.tts.entities.rest.ProfileInfo;
 import tts.ivan.tts.entities.rest.ProfileAddress;
 import tts.ivan.tts.entities.rest.ProfileContact;
-
+import tts.ivan.tts.entities.rest.ProfileOccupation;
+import tts.ivan.tts.entities.rest.ProfileEducation;
 /**
  *
  * @author ivanr
@@ -94,5 +95,17 @@ public class RestController {
     public String save(ProfileContact input){
         profileService.updateProfileContact(input);
         return "redirect:/contact/";
+    }
+    
+    @PostMapping("/saveoccupation")
+    public String save(ProfileOccupation input){
+        profileService.updateProfileOccupation(input);
+        return "redirect:/occupation/";
+    }
+    
+    @PostMapping("/saveeducation")
+    public String save(ProfileEducation input){
+        profileService.updateProfileEducation(input);
+        return "redirect:/education/";
     }
 }
