@@ -53,4 +53,11 @@ public class RestController {
         System.out.println(profileService.getProfileAddress("USER-00016"));
         return "address";
     }
+
+    @GetMapping("/contact/")
+    public String profilecontact(Model model) {
+        model.addAttribute("contact", profileService.getProfileContact("USER-00016"));
+        System.out.println(profileService.getProfileContact("USER-00016"));
+        return "contact";
+    }
 }

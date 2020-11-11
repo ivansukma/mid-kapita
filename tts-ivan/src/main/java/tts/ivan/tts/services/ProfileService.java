@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import tts.ivan.tts.entities.rest.ProfileInfo;
 import tts.ivan.tts.entities.rest.ProfileAddress;
+import tts.ivan.tts.entities.rest.ProfileContact;
 
 /**
  *
@@ -44,6 +45,16 @@ public class ProfileService {
         param.put("id", id);
 
         result = restTemplate.getForObject(uri + "profile/address/{id}", ProfileAddress.class, param);
+        return result;
+    }
+    
+    public ProfileContact getProfileContact(String id) {
+        ProfileContact result;
+        Map<String, String> param = new HashMap<>();
+
+        param.put("id", id);
+
+        result = restTemplate.getForObject(uri + "profile/contact/{id}", ProfileContact.class, param);
         return result;
     }
 }

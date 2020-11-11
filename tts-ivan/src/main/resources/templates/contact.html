@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Data Diri</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Contact Table</div>
+        <table border="1">
+            <tr th:each="as : ${contact}">
+                <td>ID</td>
+                <td th:text="${as.id}"></td>
+            </tr>
+            <tr th:each="as : ${contact}">
+                <td>FACEBOOK</td>
+                <td th:text="${as.facebook}"></td>
+            </tr>
+            <tr th:each="as : ${contact}">
+                <td>INSTAGRAM</td>
+                <td th:text="${as.instagram}"></td>
+            </tr>
+            <tr th:each="as : ${contact}">
+                <td>LinkedIn</td>
+                <td th:text="${as.linkedin}"></td>
+            </tr>
+            <tr th:each="as : ${contact}">
+                <td>Phone</td>
+                <td th:text="${as.phone}"></td>
+            </tr>
+        </table>
+
+    </body>
+</html>
