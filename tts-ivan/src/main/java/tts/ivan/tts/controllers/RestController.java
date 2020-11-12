@@ -30,7 +30,9 @@ public class RestController {
 
     @Autowired
     LoginRestService service;
-
+    
+    String id;
+    
     @GetMapping("")
     public String index(Model model) {
         model.addAttribute("logininput", new LoginInput());
@@ -41,6 +43,8 @@ public class RestController {
     public String login(LoginInput input) {
         System.out.println(input);
         System.out.println(service.login(input));
+        id= service.getLoginId(service.login(input));
+        System.out.println(id);
         return "redirect:/profile/";
     }
 
@@ -49,36 +53,36 @@ public class RestController {
 
     @GetMapping("/profile/")
     public String profileBasic(Model model) {
-        model.addAttribute("profile", profileService.getProfileInfo("USER-00016"));
-        System.out.println(profileService.getProfileInfo("USER-00016"));
+        model.addAttribute("profile", profileService.getProfileInfo(id));
+        System.out.println(profileService.getProfileInfo(id));
         return "profile_basic";
     }
 
     @GetMapping("/address/")
     public String profileAddress(Model model) {
-        model.addAttribute("address", profileService.getProfileAddress("USER-00016"));
-        System.out.println(profileService.getProfileAddress("USER-00016"));
+        model.addAttribute("address", profileService.getProfileAddress(id));
+        System.out.println(profileService.getProfileAddress(id));
         return "profile_address";
     }
 
     @GetMapping("/contact/")
     public String profilecontact(Model model) {
-        model.addAttribute("contact", profileService.getProfileContact("USER-00016"));
-        System.out.println(profileService.getProfileContact("USER-00016"));
+        model.addAttribute("contact", profileService.getProfileContact(id));
+        System.out.println(profileService.getProfileContact(id));
         return "profile_contact";
     }
 
     @GetMapping("/occupation/")
     public String profileOccupation(Model model) {
-        model.addAttribute("occupation", profileService.getProfileOccupation("USER-00016"));
-        System.out.println(profileService.getProfileOccupation("USER-00016"));
+        model.addAttribute("occupation", profileService.getProfileOccupation(id));
+        System.out.println(profileService.getProfileOccupation(id));
         return "profile_occupation";
     }
 
     @GetMapping("/education/")
     public String profileEducation(Model model) {
-        model.addAttribute("education", profileService.getProfileEducation("USER-00016"));
-        System.out.println(profileService.getProfileEducation("USER-00016"));
+        model.addAttribute("education", profileService.getProfileEducation(id));
+        System.out.println(profileService.getProfileEducation(id));
         return "profile_education";
     }
     //=================Per Save An duniawi==================

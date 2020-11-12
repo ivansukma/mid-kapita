@@ -40,4 +40,8 @@ public class LoginRestService {
         );
         return responseEntity.getBody();
     }
+    
+    public String getLoginId(LoginOutput output){
+        return output.getUser().getId();
+    }
 }
