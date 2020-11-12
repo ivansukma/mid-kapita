@@ -130,6 +130,6 @@ public class RestController {
     public String register(Register input) {
         System.out.println(input);
         System.out.println(RegisterService.register(input));
-        return "redirect:/profile/";
+        return "index";
     }
 }
