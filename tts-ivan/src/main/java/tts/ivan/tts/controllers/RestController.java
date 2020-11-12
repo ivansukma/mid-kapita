@@ -25,6 +25,7 @@ import tts.ivan.tts.entities.rest.Register;
  *
  * @author ivanr
  */
+//======================================Login===========================================
 @Controller
 public class RestController {
 
@@ -47,7 +48,7 @@ public class RestController {
         System.out.println(id);
         return "redirect:/profile/";
     }
-
+//======================================Profile===========================================
     @Autowired
     ProfileService profileService;
 
