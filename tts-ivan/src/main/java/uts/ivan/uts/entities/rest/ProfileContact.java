@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tts.ivan.tts.entities.rest;
+package uts.ivan.uts.entities.rest;
 
 import lombok.Data;
 
@@ -12,11 +12,10 @@ import lombok.Data;
  * @author ivanr
  */
 @Data
-public class ProfileEducation {
-
-    private String major;
-    private String university;
-    private String degree;
+public class ProfileContact {
+    private String facebook;
     private String id;
-    private String status;
+    private String instagram;
+    private String linkedin;
+    private String phone;
 }

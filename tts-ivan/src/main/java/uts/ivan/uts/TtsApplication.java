@@ -1,4 +1,4 @@
-package tts.ivan.tts;
+package uts.ivan.uts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

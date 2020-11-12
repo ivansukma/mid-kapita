@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tts.ivan.tts.services;
+package uts.ivan.uts.services;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,11 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import tts.ivan.tts.entities.rest.ProfileInfo;
-import tts.ivan.tts.entities.rest.ProfileAddress;
-import tts.ivan.tts.entities.rest.ProfileContact;
-import tts.ivan.tts.entities.rest.ProfileEducation;
-import tts.ivan.tts.entities.rest.ProfileOccupation;
+import uts.ivan.uts.entities.rest.ProfileInfo;
+import uts.ivan.uts.entities.rest.ProfileAddress;
+import uts.ivan.uts.entities.rest.ProfileContact;
+import uts.ivan.uts.entities.rest.ProfileEducation;
+import uts.ivan.uts.entities.rest.ProfileOccupation;
 
 /**
  *

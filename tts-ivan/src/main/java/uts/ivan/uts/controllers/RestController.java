@@ -3,23 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tts.ivan.tts.controllers;
+package uts.ivan.uts.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import tts.ivan.tts.services.LoginRestService;
-import tts.ivan.tts.entities.rest.LoginInput;
-import tts.ivan.tts.services.ProfileService;
-import tts.ivan.tts.entities.rest.ProfileInfo;
-import tts.ivan.tts.entities.rest.ProfileAddress;
-import tts.ivan.tts.entities.rest.ProfileContact;
-import tts.ivan.tts.entities.rest.ProfileOccupation;
-import tts.ivan.tts.entities.rest.ProfileEducation;
-import tts.ivan.tts.services.RegisterService;
-import tts.ivan.tts.entities.rest.Register;
+import uts.ivan.uts.services.LoginRestService;
+import uts.ivan.uts.entities.rest.LoginInput;
+import uts.ivan.uts.services.ProfileService;
+import uts.ivan.uts.entities.rest.ProfileInfo;
+import uts.ivan.uts.entities.rest.ProfileAddress;
+import uts.ivan.uts.entities.rest.ProfileContact;
+import uts.ivan.uts.entities.rest.ProfileOccupation;
+import uts.ivan.uts.entities.rest.ProfileEducation;
+import uts.ivan.uts.services.RegisterService;
+import uts.ivan.uts.entities.rest.Register;
 
 /**
  *

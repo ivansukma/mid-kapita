@@ -3,20 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tts.ivan.tts.entities.rest;
+package uts.ivan.uts.entities.rest;
 
 import lombok.Data;
 
 /**
  *
- * @author ivanr
+ * @author cnugr
  */
 @Data
-public class ProfileInfo {
-    private String id;
-    private String name;
-    private String birthDate;
-    private String gender;
+public class LoginInput {
+
     private String email;
-    
+    private String password;
 }

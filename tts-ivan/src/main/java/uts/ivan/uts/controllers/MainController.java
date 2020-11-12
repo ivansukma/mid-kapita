@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tts.ivan.tts.entities.rest;
-
-import lombok.Data;
+package uts.ivan.uts.controllers;
 
 /**
  *
- * @author cnugr
+ * @author ivanr
  */
-@Data
-public class LoginInput {
-
-    private String email;
-    private String password;
+public class MainController {
+    
 }
