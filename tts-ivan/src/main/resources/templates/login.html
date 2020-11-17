@@ -162,7 +162,35 @@ and open the template in the editor.
                 color: #cccccc;
             }
 
+            input[type=password] {
+                background-color: #f6f6f6;
+                border: none;
+                color: #0d0d0d;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 5px;
+                width: 85%;
+                border: 2px solid #f6f6f6;
+                -webkit-transition: all 0.5s ease-in-out;
+                -moz-transition: all 0.5s ease-in-out;
+                -ms-transition: all 0.5s ease-in-out;
+                -o-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out;
+                -webkit-border-radius: 5px 5px 5px 5px;
+                border-radius: 5px 5px 5px 5px;
+            }
 
+            input[type=password]:focus {
+                background-color: #fff;
+                border-bottom: 2px solid #5fbae9;
+            }
+
+            input[type=password]:placeholder {
+                color: #cccccc;
+            }
 
             /* ANIMATIONS */
 
@@ -312,10 +340,10 @@ and open the template in the editor.
                         <div class="col-md-auto">
                             <form th:action="@{login}" th:object="${logininput}" method="POST">
                                 <div class="col-xs-4">
-                                <input type="text" id="password" th:field="*{email}" placeholder="login" class="form-control input-lg fadeIn second" name="login"><br><br>
+                                    <input type="text" id="password" th:field="*{email}" placeholder="login" class="form-control input-lg fadeIn second" name="login"><br><br>
                                 </div>
                                 <div class="col-xs-2">
-                                <input type="password"  id="password" th:field="*{password}" placeholder="password" class="form-control input-sm text-center fadeIn third " name="login"><br><br>
+                                    <input type="password"  id="password" th:field="*{password}" placeholder="password" class="form-control input-sm text-center fadeIn third " name="login"><br><br>
                                 </div>
                                 <input type="submit" value="Log In" class="fadeIn fourth">
                             </form>
@@ -330,7 +358,7 @@ and open the template in the editor.
                 <br>
                 <br>
                 <div id="formFooter">
-                    <center>Kapita Consume App By Ivan Sukma</center>
+                    <center>Kapita Consume App</center>
                 </div>
 
             </div>
