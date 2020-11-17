@@ -304,13 +304,29 @@ and open the template in the editor.
                     <h1 style="text-align: center">Welcome !</h1>
                     <br>
                 </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <!--kosong awas-->
+                        </div>
+                        <div class="col-md-auto">
+                            <form th:action="@{login}" th:object="${logininput}" method="POST">
+                                <div class="col-xs-4">
+                                <input type="text" id="password" th:field="*{email}" placeholder="login" class="form-control input-lg fadeIn second" name="login"><br><br>
+                                </div>
+                                <div class="col-xs-2">
+                                <input type="password"  id="password" th:field="*{password}" placeholder="password" class="form-control input-sm text-center fadeIn third " name="login"><br><br>
+                                </div>
+                                <input type="submit" value="Log In" class="fadeIn fourth">
+                            </form>
+                            <a href="http://localhost:8084/register/" class="btn btn-success fadeIn fifth">Register</a>
+                        </div>
+                        <div class="col-sm">
+                            <!--kosong awas-->
+                        </div>
+                    </div>
+                </div>
 
-                <form th:action="@{login}" th:object="${logininput}" method="POST">
-                    <input type="text" id="login" th:field="*{email}" placeholder="login" class="fadeIn second" name="login"><br><br>
-                    <input type="text"  id="password" th:field="*{password}" placeholder="password" class="fadeIn third" name="login"><br><br>
-                    <input type="submit" value="Log In" class="fadeIn fourth">
-                </form>
-                <a href="http://localhost:8084/register/" class="btn btn-success fadeIn fifth">Register</a>
                 <br>
                 <br>
                 <div id="formFooter">
