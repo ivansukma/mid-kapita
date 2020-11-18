@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import uts.ivan.uts.services.LoginRestService;
 import uts.ivan.uts.entities.rest.LoginInput;
 import uts.ivan.uts.services.ProfileService;
@@ -34,13 +35,15 @@ public class RestController {
     
     String id;
     
-    @GetMapping("")
+    @GetMapping("login")
     public String index(Model model) {
         model.addAttribute("logininput", new LoginInput());
+        LoginInput input = new LoginInput();
+        input.setEmail("");
         return "login";
     }
 
-    @PostMapping("login")
+    @PostMapping("/login_execute")
     public String login(LoginInput input) {
         System.out.println(input);
         System.out.println(service.login(input));
@@ -52,7 +55,7 @@ public class RestController {
     @Autowired
     ProfileService profileService;
 
-    @GetMapping("/profile/")
+    @GetMapping("")
     public String profileBasic(Model model) {
         model.addAttribute("profile", profileService.getProfileInfo(id));
         System.out.println(profileService.getProfileInfo(id));
@@ -91,7 +94,7 @@ public class RestController {
     @PostMapping("/saveinfo")
     public String save(ProfileInfo input) {
         profileService.updateProfileBasic(input);
-        return "redirect:/profile/";
+        return "redirect:/";
     }
 
     @PostMapping("/saveaddress")

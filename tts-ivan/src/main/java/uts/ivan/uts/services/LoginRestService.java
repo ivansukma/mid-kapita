@@ -15,6 +15,8 @@ import org.springframework.web.client.RestTemplate;
 import uts.ivan.uts.entities.rest.LoginInput;
 import uts.ivan.uts.entities.rest.LoginOutput;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 
 /**
@@ -44,4 +46,5 @@ public class LoginRestService {
     public String getLoginId(LoginOutput output){
         return output.getUser().getId();
     }
+
 }

@@ -9,8 +9,11 @@ import java.util.HashMap;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import uts.ivan.uts.entities.rest.LoginOutput;
 import uts.ivan.uts.entities.rest.ProfileInfo;
 import uts.ivan.uts.entities.rest.ProfileAddress;
 import uts.ivan.uts.entities.rest.ProfileContact;
@@ -36,7 +39,7 @@ public class ProfileService {
 
         param.put("id", id);
 
-        result = restTemplate.getForObject(uri + "profile/basic/{id}", ProfileInfo.class, param);
+        result = restTemplate.getForObject(uri + "profile/basic/{id}" + getUserId(), ProfileInfo.class, param);
         return result;
     }
 
@@ -46,7 +49,7 @@ public class ProfileService {
 
         param.put("id", id);
 
-        result = restTemplate.getForObject(uri + "profile/address/{id}", ProfileAddress.class, param);
+        result = restTemplate.getForObject(uri + "profile/address/{id}"+ getUserId(), ProfileAddress.class, param);
         return result;
     }
 
@@ -56,7 +59,7 @@ public class ProfileService {
 
         param.put("id", id);
 
-        result = restTemplate.getForObject(uri + "profile/contact/{id}", ProfileContact.class, param);
+        result = restTemplate.getForObject(uri + "profile/contact/{id}"+ getUserId(), ProfileContact.class, param);
         return result;
     }
 
@@ -66,7 +69,7 @@ public class ProfileService {
 
         param.put("id", id);
 
-        result = restTemplate.getForObject(uri + "profile/currentoccupation/{id}", ProfileOccupation.class, param);
+        result = restTemplate.getForObject(uri + "profile/currentoccupation/{id}"+ getUserId(), ProfileOccupation.class, param);
         return result;
     }
 
@@ -76,8 +79,14 @@ public class ProfileService {
 
         param.put("id", id);
 
-        result = restTemplate.getForObject(uri + "profile/education/{id}", ProfileEducation.class, param);
+        result = restTemplate.getForObject(uri + "profile/education/{id}"+ getUserId(), ProfileEducation.class, param);
         return result;
+    }
+   //=================Get ID FOR SPRING SECURITY====================     
+        public String getUserId(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        LoginOutput output = (LoginOutput)authentication.getPrincipal();
+        return output.getUser().getId();
     }
     //=============================PER SAVE AN DUNIAWI========================================
 
